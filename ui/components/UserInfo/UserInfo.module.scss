@@ -1,0 +1,23 @@
+.UserInfo {
+    
+    figure {
+        div {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            img {
+                    border-radius: 5px;
+                }
+            
+            figcaption {
+                margin-left: var(--s-size);
+                transition: .3s;
+                
+                &:hover {
+                    color: var(--primary-color);
+                }
+            }
+        }
+        
+    }
+}

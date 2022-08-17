@@ -1,0 +1,14 @@
+.Logo {
+    font-size: var(--m-size);
+    font-weight: bold;
+    cursor: pointer;
+    padding: var(--m-size);
+    span {
+        color: var(--primary-color);
+        display: inline-block;
+        height: 4px;
+        width: 10px;
+        background-color: var(--primary-color);
+        margin-right: 1px;
+    }
+}

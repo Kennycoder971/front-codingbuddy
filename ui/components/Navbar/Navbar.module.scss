@@ -1,0 +1,109 @@
+.Navbar {
+    position: relative;
+    z-index: 1000;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        figure {
+                display: inline-block;
+                padding: var(--m-size);
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            li {
+                a {
+                    position: relative;
+                    padding: var(--m-size);
+                    display: inline-block;
+                }
+            }
+            
+            li:not(last-child) {
+                margin-right: 1vw;
+            }
+        
+        }
+    }
+}
+
+.Hamberger {
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    cursor: pointer;
+    display: none;
+
+    &:hover {
+        .line {
+            opacity: .7;
+        }
+    }
+
+    .line {
+        background-color: rgb(218, 218, 218);
+        height: 5px;
+        width: 100%;
+        border-radius: 5px;
+        transition: .5s;
+    }
+}
+
+@media screen and (max-width: 830px){
+    .Hamberger {
+        display: flex;
+        z-index: 1000;
+    }
+    .Navbar {
+        background-color: rgb(28, 28, 28);
+        position: fixed;
+        min-height: 100vh;
+        width: 300px;
+        transition: .5s;
+        transform: translateX(-100%);
+        padding-top: var(--s-size);
+        p {
+            padding: var(--m-size);
+        }
+        figure {
+            div {
+                display: flex;
+                flex-direction: row;
+            }
+        }
+        &.open {
+            transform: translateX(0);
+        }
+        
+        div {
+            margin: 0;
+            flex-direction: column;
+            align-items: flex-start;
+
+            ul {
+                flex-direction: column;
+                justify-content: start ;
+                align-items: flex-start;
+                
+
+                li {
+                    padding: 0;
+                }
+            }  
+        }
+    }
+}
+
+

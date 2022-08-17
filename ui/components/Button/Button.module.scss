@@ -1,0 +1,12 @@
+.Button {
+   padding: var(--xs-size);
+   border: 0;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: .5s;
+}
+
+.primary{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}

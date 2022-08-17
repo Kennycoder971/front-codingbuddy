@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/ui/*": [
+                "ui/*"
+            ],
+            "@/styles/*": [
+                "styles/*"
+            ],
+            "@/store/*": [
+                "store/*"
+            ],
+            "@/helpers/*": [
+                "helpers/*"
+            ],
+            "@/queries/*": [
+                "queries/*"
+            ],
+            "@/customHooks/*": [
+                "customHooks/*"
+            ]
+        }
+    }
+}

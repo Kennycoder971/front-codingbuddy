@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "generate-react-cli": "^7.2.0",
     "next": "12.2.4",
+    "node-sass": "^7.0.1",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sass": "^1.54.3"
   },
   "devDependencies": {
     "eslint": "8.21.0",

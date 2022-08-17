@@ -1,9 +1,52 @@
+:root{
+  --primary-color:#0BC199;
+  --text-color:#fff;
+  --second-text-color:#D9D9D9;
+  --bg-terciary:#313131;
+  --bg-secondary:#1E1E1E;
+  --bg-primary:#111418;
+  --red:#EB5757;
+   
+  --xs-size: 0.8rem;
+  --s-size: 1.2rem;
+  --m-size: 1.6rem;
+  --ml-size: 2.4rem;
+  --l-size: 3.6rem;
+  --xl-size: 4.8rem;
+  --xxl-size: 6.4rem;
+  
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+.light {
+  
+  --text-color: #111418;
+  --second-text-color: #ababab;
+  --bg-terciary: #cbcbcb;
+  --bg-secondary: rgb(235, 235, 235);
+  --bg-primary: #fff;
+  --red: #EB5757;
+}
+html {
+  font-size: 62.5%;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  
+  font-family: 
+    Ubuntu, Helvetica , sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-color);
+    font-size: 16px;
 }
 
 a {
@@ -15,12 +58,7 @@ a {
   box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+h1 {
+  color:var(--text-color);
 }
+
