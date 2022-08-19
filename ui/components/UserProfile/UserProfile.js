@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./UserProfile.module.scss";
 import Image from "next/image";
-import Container from "../Container/Container";
 import Button from "../Button/Button";
 
 const UserProfile = ({ follower, following }) => (
@@ -16,8 +15,8 @@ const UserProfile = ({ follower, following }) => (
     <div className={styles.userInfo}>
       <div className={styles.photo}>
         <Image
-          width={120}
-          height={120}
+          width={150}
+          height={150}
           src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
         />
       </div>

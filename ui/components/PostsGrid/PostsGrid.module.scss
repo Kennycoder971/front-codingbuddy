@@ -1,0 +1,35 @@
+.PostsGrid {
+    max-width: 1300px;
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    
+    .tabs{
+        background-color: var(--bg-secondary);
+        padding: var(--s-size) var(--m-size) var(--s-size) 0;
+        border-radius: 5px;
+        list-style: none;
+
+        li {
+            padding: 1rem ;
+            padding-left: 2rem;
+            position: relative;
+            
+            &.active::before{
+                opacity: 1;
+            }
+            
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 5px;
+                height: 100%;
+                background-color: var(--primary-color);
+                opacity: 0;
+            }
+        }
+    }
+}
