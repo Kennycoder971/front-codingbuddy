@@ -11,6 +11,7 @@
         padding: var(--s-size) var(--m-size) var(--s-size) 0;
         border-radius: 5px;
         list-style: none;
+        height: fit-content;
 
         li {
             padding: 1rem ;
@@ -42,7 +43,6 @@
 
         li{
             padding: var(--s-size);
-            min-height: 150px;
             border-radius: 5px;
             background-color: var(--bg-secondary);
         }
@@ -52,6 +52,7 @@
         list-style: none;
         background-color: var(--bg-secondary);
         border-radius: 5px;
+        height: fit-content;
 
         li, .heading {
             margin-bottom: var(--m-size);
@@ -60,7 +61,7 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 830px) {
     .PostsGrid {
         display: flex;
         flex-direction: column;
