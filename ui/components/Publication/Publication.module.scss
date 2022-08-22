@@ -1,0 +1,40 @@
+
+
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: var(--m-size);
+
+    .Publication {
+        background-color: var(--bg-secondary);
+        padding: var(--m-size);
+        border-radius: 5px;
+
+        .inputContainer {
+            textarea {
+                width: 100%;
+                padding: var(--m-size);
+                margin-bottom:var(--m-size);
+                outline: none;
+                border-radius: 5px;
+                background-color: var(--bg-terciary);
+                min-height: 150px;
+                border: 0;
+                font-family: inherit;
+                color: var(--text-color);
+                font-size: 1.5rem;
+            }
+
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .postContainer {
+        margin-top: var(--l-size);
+    }
+}
