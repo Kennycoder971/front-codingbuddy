@@ -45,7 +45,7 @@
             display: flex;
             justify-content: space-between;
             list-style: none;
-            width: 30%;
+            
 
             li {
                 padding: 0;
@@ -53,12 +53,16 @@
                 display: flex;
                 margin-left: 1vw;
                 cursor: pointer;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
                 &.active {
                     color: red;
                 }
                 span {
                     margin-left: 1vw;
-                    
                 }
             }
         }

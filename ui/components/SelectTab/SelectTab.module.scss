@@ -1,0 +1,54 @@
+
+.tabs {
+    background-color: var(--bg-secondary);
+    padding: var(--s-size) var(--m-size) var(--s-size) 0;
+    border-radius: 5px;
+    list-style: none;
+    height: fit-content;
+
+    li {
+        padding: 1rem;
+        padding-left: 2rem;
+        position: relative;
+        text-transform: capitalize;
+
+        &.active::before {
+            opacity: 1;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--primary-color);
+            opacity: 0;
+            transition: .5s;
+            border-radius: 0 5px 5px 0;
+        }
+    }
+}
+
+@media screen and (max-width: 830px) {
+
+    .tabs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin-bottom: var(--s-size);
+
+        li {
+            padding: var(--m-size);
+        }
+
+        li:before {
+            width: 100%;
+            height: 5px;
+        }
+
+    }
+
+}

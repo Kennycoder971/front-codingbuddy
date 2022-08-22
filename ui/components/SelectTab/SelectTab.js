@@ -1,4 +1,4 @@
-import styles from "./PostsGrid.module.scss";
+import styles from "./SelectTab.module.scss";
 
 const SelectTabs = ({ tabs, func, selected }) => {
   function tabElements(tabArr) {
@@ -18,4 +18,9 @@ const SelectTabs = ({ tabs, func, selected }) => {
   return <ul className={styles.tabs}> {tabElements(tabs)}</ul>;
 };
 
+SelectTabs.defaultProps = {
+  tabs: ["Tab 1"],
+  func: () => {},
+  selected: 0,
+};
 export default SelectTabs;

@@ -1,4 +1,4 @@
-import SelectTabs from "./SelectTabs";
+import SelectTab from "../SelectTab/SelectTab";
 import RecommandFriends from "./RecommandFriends";
 import styles from "./PostsGrid.module.scss";
 import Post from "../Post/Post";
@@ -17,7 +17,7 @@ const PostsGrid = () => {
 
   return (
     <div className={styles.PostsGrid}>
-      <SelectTabs tabs={tabs} func={showComponent} selected={index} />
+      <SelectTab tabs={tabs} func={showComponent} selected={index} />
 
       <ul className={styles.postList}>{componentsToShow[index]}</ul>
 
