@@ -4,7 +4,8 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    
+    padding-bottom: 5vh;
+
     .tabs{
         background-color: var(--bg-secondary);
         padding: var(--s-size) var(--m-size) var(--s-size) 0;
@@ -15,7 +16,7 @@
             padding: 1rem ;
             padding-left: 2rem;
             position: relative;
-            
+            text-transform: capitalize;
             &.active::before{
                 opacity: 1;
             }
@@ -29,7 +30,68 @@
                 height: 100%;
                 background-color: var(--primary-color);
                 opacity: 0;
+                transition: .5s;
+                border-radius: 0 5px 5px 0;
             }
         }
     }
+
+    .postList {
+        margin: 0 2vw;
+        list-style: none;
+
+        li{
+            padding: var(--s-size);
+            min-height: 150px;
+            border-radius: 5px;
+            background-color: var(--bg-secondary);
+        }
+    }
+    .recommandFriend {
+        padding:  var(--m-size) ;
+        list-style: none;
+        background-color: var(--bg-secondary);
+        border-radius: 5px;
+
+        li, .heading {
+            margin-bottom: var(--m-size);
+        }
+
+    }
 }
+
+@media screen and (max-width: 800px) {
+    .PostsGrid {
+        display: flex;
+        flex-direction: column;
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0;
+            margin-bottom: var(--s-size);
+            
+            li {
+               padding: var(--m-size); 
+                
+            }
+
+            li:before {
+                width: 100%;
+                height: 5px;       
+            }
+            
+        }
+
+        .postList {
+            margin: 0;
+        }
+        .recommandFriend {
+            display: none;
+        }
+    }
+
+
+}
+
