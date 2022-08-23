@@ -1,11 +1,10 @@
-import UserProfile from "@/ui/components/UserProfile/UserProfile";
-import PostsGrid from "@/ui/components/PostsGrid/PostsGrid";
+import Publication from "@/ui/components/Publication/Publication";
+import React from "react";
 
-export default function Home() {
+export default function me() {
   return (
-    <>
-      <UserProfile />
-      <PostsGrid />
-    </>
+    <main>
+      <Publication />
+    </main>
   );
 }

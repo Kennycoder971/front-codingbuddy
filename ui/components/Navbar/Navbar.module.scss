@@ -1,6 +1,6 @@
 .Navbar {
     position: relative;
-    z-index: 1000;
+    z-index: 10;
     div {
         display: flex;
         align-items: center;
@@ -64,7 +64,7 @@
 @media screen and (max-width: 830px){
     .Hamberger {
         display: flex;
-        z-index: 1000;
+        z-index: 10;
     }
     .Navbar {
         background-color: rgb(28, 28, 28);

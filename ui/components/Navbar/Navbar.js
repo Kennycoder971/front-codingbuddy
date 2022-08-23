@@ -16,10 +16,10 @@ const Navbar = () => {
           {" "}
           <Logo />
           <ul>
-            <NavLink text="Accueil" pathname={"/"} />
-            <NavLink text="Profil" />
-            <NavLink text="Explorer" />
-            <NavLink text="Sauvegardes" />
+            <NavLink text="Accueil" pathname={"/"} href="/" />
+            <NavLink text="Profil" href="/me" />
+            <NavLink text="Explorer" href="/explore" />
+            <NavLink text="Sauvegardes" href="/saved" />
           </ul>
           <UserInfo />
         </Container>
