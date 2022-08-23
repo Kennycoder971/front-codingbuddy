@@ -1,0 +1,42 @@
+.Search {
+    position: relative;
+
+    form {
+       display: flex;
+       justify-content: center;
+
+       input {
+            width: 100%;
+            outline: none;
+            border: 0;
+            padding: .6rem;
+            border-radius: 5px 0 0 5px;
+            background-color: var(--text-color);
+            color: var(--bg-primary);
+            font-size: 1rem;
+       }
+
+       .searchBtn {
+            padding: .4rem;
+            border: 0;
+            border-radius: 0 5px 5px 0;
+            background-color: var(--text-color);
+            color: var(--bg-primary);
+       }
+    }
+
+    .SearchDropdown {
+        position: absolute;
+        width: 100%;
+        bottom: -2vh;
+        transform: translateY(100%);
+        list-style: none;
+
+        li {
+            cursor: pointer;
+            &:hover {
+                background-color: var(--bg-terciary);
+            }
+        }
+    }
+}

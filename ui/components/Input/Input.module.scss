@@ -8,7 +8,8 @@
         background-color: var(--text-color);
         color: var(--bg-primary);
         border-radius: 5px;
-        outline: none;
         font-family: inherit;
+
+        outline-color: var(--primary-color);
     }
 }

@@ -6,8 +6,8 @@
     left: 0;
     top: 0;
     z-index: 99;
-    opacity: .8;
-  
+    opacity: .7;
+    cursor: pointer;
 }
 
 .SettingPopup {
@@ -16,14 +16,17 @@
     left: 50%;
     top: 30%;
     transform: translateX(-50%);
-    padding: var(--m-size);
+    padding:var(--ml-size) var(--m-size);
     background-color: var(--bg-secondary);
     max-width: 500px;
     width: 90%;
     border-radius: 5px;
-
+    
     form {
         width: 100%;
         
+        button {
+            width: 100%;
+        }
     }
 }

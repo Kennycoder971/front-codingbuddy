@@ -1,12 +1,21 @@
 import SelectTab from "../SelectTab/SelectTab";
 import RecommandFriends from "./RecommandFriends";
 import styles from "./Explore.module.scss";
-import Post from "../Post/Post";
 import { useState } from "react";
-
+import Search from "../Search/Search";
+import HashtagList from "./HashtagList";
+import ProfileList from "../ProfileList/ProfileList";
 const tabs = ["Récents", "re-posts", "media", "j'aime"];
 
-const componentsToShow = [<Post />, <li> 2 </li>, <li> 3 </li>];
+const componentsToShow = [
+  <>
+    <Search />
+    <HashtagList />
+    <ProfileList />
+  </>,
+  <li> 2 </li>,
+  <li> 3 </li>,
+];
 
 const PostsGrid = () => {
   const [index, setIndex] = useState(0);

@@ -1,3 +1,4 @@
+
 .PostsGrid {
     max-width: 1300px;
     width: 90%;
@@ -46,6 +47,23 @@
             padding: var(--s-size);
             border-radius: 5px;
             background-color: var(--bg-secondary);
+        }
+        .wrapper {
+            h3 {
+                margin-top: var(--xs-size);
+            }
+            .hashtagList {
+                margin: var(--xs-size) 0;
+                list-style: none;
+        
+                li {
+                    border-radius: 0;
+        
+                    &:hover {
+                        background-color: var(--bg-terciary);
+                    }
+                }
+            }
         }
     }
     .recommandFriend {
