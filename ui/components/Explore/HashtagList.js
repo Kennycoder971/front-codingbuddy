@@ -6,13 +6,15 @@ export default function HashtagList({ hashtags }) {
   const listHashtags = hashtags.map((el) => {
     return (
       <li key={el}>
-        <Link href={"/"}>{el}</Link>{" "}
+        <Link href={"/"}>
+          <a>{el}</a>
+        </Link>{" "}
       </li>
     );
   });
   return (
     <div className={styles.wrapper}>
-      <h3>Des Hashtags</h3>
+      <h3>Des hashtags qui pourraient vous intéresser </h3>
       <ul className={styles.hashtagList}>{listHashtags}</ul>
     </div>
   );

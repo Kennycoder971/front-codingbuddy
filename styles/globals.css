@@ -54,11 +54,6 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+ul {
+  list-style: none;
 }
-
-h1 {
-  color:var(--text-color);
-}
-

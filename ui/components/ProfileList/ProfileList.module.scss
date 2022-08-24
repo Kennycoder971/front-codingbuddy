@@ -1,1 +1,14 @@
-.ProfileList {}
+.ProfileList {
+    
+    h3 {
+        margin-bottom: var(--m-size);
+    }
+    .list {
+        li {
+            border-radius: 0;
+            &:hover {
+                background-color: var(--bg-terciary);
+            }
+        }
+    }
+}

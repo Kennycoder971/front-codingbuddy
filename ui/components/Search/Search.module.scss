@@ -31,6 +31,8 @@
         bottom: -2vh;
         transform: translateY(100%);
         list-style: none;
+        border: 2px solid var(--text-color);
+        border-radius: 5px;
 
         li {
             cursor: pointer;

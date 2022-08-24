@@ -5,17 +5,9 @@ import { useState } from "react";
 import Search from "../Search/Search";
 import HashtagList from "./HashtagList";
 import ProfileList from "../ProfileList/ProfileList";
-const tabs = ["Récents", "re-posts", "media", "j'aime"];
+const tabs = ["Hashtags", "profils"];
 
-const componentsToShow = [
-  <>
-    <Search />
-    <HashtagList />
-    <ProfileList />
-  </>,
-  <li> 2 </li>,
-  <li> 3 </li>,
-];
+const componentsToShow = [<HashtagList />, <ProfileList />, <li> 3 </li>];
 
 const PostsGrid = () => {
   const [index, setIndex] = useState(0);
@@ -28,7 +20,10 @@ const PostsGrid = () => {
     <div className={styles.PostsGrid}>
       <SelectTab tabs={tabs} func={showComponent} selected={index} />
 
-      <ul className={styles.postList}>{componentsToShow[index]}</ul>
+      <ul className={styles.postList}>
+        <Search />
+        {componentsToShow[index]}
+      </ul>
 
       <RecommandFriends />
     </div>
