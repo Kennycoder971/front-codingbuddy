@@ -1,6 +1,6 @@
 .UserSettings {
     position: relative;
-
+    cursor: pointer;
     .imgContainer {
         display: flex;
         align-items: center;
@@ -10,6 +10,7 @@
             margin-left: var(--xs-size);
         }
     }
+    
     .dropdown {
         display: none;
         flex-direction: column;
@@ -55,8 +56,9 @@
 @media screen and (max-width: 830px) {
   .UserSettings {
     
-    a {
-        order: 1;
+    figure {
+        display: none;
+        
     }
     .dropdown {
         position: static;
