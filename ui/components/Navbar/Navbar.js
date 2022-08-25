@@ -5,6 +5,7 @@ import UserInfo from "../UserInfo/UserInfo";
 import Hamberger from "./Hamberger";
 import { useState } from "react";
 import Logo from "../Logo/Logo";
+import UserSettings from "../UserSettings/UserSettings";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
             <NavLink text="Explorer" href="/explore" />
             <NavLink text="Sauvegardes" href="/saved" />
           </ul>
-          <UserInfo />
+          <UserSettings />
         </Container>
       </div>
       <Hamberger navOpen={navOpen} setNavOpen={setNavOpen} />

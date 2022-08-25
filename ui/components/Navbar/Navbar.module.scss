@@ -68,6 +68,8 @@
     }
     .Navbar {
         background-color: rgb(28, 28, 28);
+        top: 0;
+        left: 0;
         position: fixed;
         min-height: 100vh;
         width: 300px;
@@ -78,6 +80,7 @@
             padding: var(--m-size);
         }
         figure {
+            
             div {
                 display: flex;
                 flex-direction: row;
@@ -88,6 +91,7 @@
         }
         
         div {
+            
             margin: 0;
             flex-direction: column;
             align-items: flex-start;
@@ -97,11 +101,12 @@
                 justify-content: start ;
                 align-items: flex-start;
                 
-
                 li {
                     padding: 0;
                 }
             }  
+
+            
         }
     }
 }
