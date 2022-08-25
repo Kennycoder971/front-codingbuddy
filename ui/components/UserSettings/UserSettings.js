@@ -4,12 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 
 const UserSettings = ({ userImage }) => {
-  const [isDropdownActive, setisDropdownActive] = useState(false);
+  const [isDropdownActive, setIsDropdownActive] = useState(false);
   return (
     <div className={styles.UserSettings}>
-      <Link href={"/"}>
+      <Link href={"/#"}>
         <a>
-          <figure className={styles.imgContainer}>
+          <figure
+            className={styles.imgContainer}
+            onClick={(e) => setIsDropdownActive(!isDropdownActive)}
+          >
             <Image
               width={40}
               height={40}
@@ -21,7 +24,11 @@ const UserSettings = ({ userImage }) => {
         </a>
       </Link>
 
-      <ul className={styles.dropdown}>
+      <ul
+        className={`${styles.dropdown} ${
+          isDropdownActive ? styles.active : ""
+        }`}
+      >
         <li>Modifier mon profil</li>
         <li>Paramètres</li>
         <li>Se déconnecter</li>
