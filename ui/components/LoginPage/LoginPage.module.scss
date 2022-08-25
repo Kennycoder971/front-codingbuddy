@@ -1,0 +1,33 @@
+.LoginPage {
+
+    .loginForm {
+        
+        display: flex;
+        flex-direction: column;
+        max-width: 500px;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 10vh;
+
+        button {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /*logo*/
+        p:first-child {
+            text-align: center;
+            margin-bottom: var(--l-size);
+        }
+
+        p:not(:first-child) {
+            margin-top: var(--m-size);
+            text-align: center;
+             a {
+                color: var(--primary-color);
+                text-decoration: underline;
+             }
+        }
+    }
+
+}

@@ -1,3 +1,5 @@
+import LoginPage from "@/ui/components/LoginPage/LoginPage";
+
 export default function login() {
-  return <main>login</main>;
+  return <LoginPage />;
 }

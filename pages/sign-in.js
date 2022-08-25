@@ -1,3 +1,9 @@
+import SignInPage from "@/ui/components/SignInPage/SignInPage";
+
 export default function SignIn() {
-  return <main>SignIn</main>;
+  return (
+    <main>
+      <SignInPage />
+    </main>
+  );
 }

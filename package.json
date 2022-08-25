@@ -18,6 +18,7 @@
     "sass": "^1.54.3"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.3.1",
     "eslint": "8.21.0",
     "eslint-config-next": "12.2.4"
   }
