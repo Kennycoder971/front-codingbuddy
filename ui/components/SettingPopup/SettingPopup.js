@@ -2,13 +2,17 @@ import React, { useState } from "react";
 import styles from "./SettingPopup.module.scss";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import { useContext } from "react";
+import UserSettingsContext from "@/store/user-settings";
 
-const SettingPopup = ({ isPopupActive, setPopupActive }) => {
+const SettingPopup = () => {
+  const { toggleSettingsPopup } = useContext(UserSettingsContext);
+
   return (
     <>
       <div
         className={styles.overlay}
-        onClick={(e) => setPopupActive(!isPopupActive)}
+        onClick={(e) => toggleSettingsPopup(false)}
       ></div>
 
       <div className={styles.SettingPopup}>

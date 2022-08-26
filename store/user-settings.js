@@ -1,6 +1,8 @@
 import { createContext, useState } from "react";
 
 const UserSettingsContext = createContext({
+  isOpenSettingsPopup: false,
+  toggleSettingsPopup: () => {},
   username: "username",
   email: "email@gmail.com",
   profilePicture: "",
@@ -11,12 +13,20 @@ const UserSettingsContext = createContext({
 
 export function UserSettingsContextProvider({ children }) {
   const [userData, setUserData] = useState({});
+  const [isOpenSettingsPopup, setIsOpenSettingsPopup] = useState(false);
+
+  function handleIsOpenSettingsPopup(boolean = false) {
+    setIsOpenSettingsPopup(boolean);
+  }
 
   const context = {
     ...userData,
-    totalFollowers: userdata.followers.length,
-    totalFollowing: userdata.following.length,
+    totalFollowers: userData.followers?.length,
+    totalFollowing: userData.following?.length,
+    toggleSettingsPopup: handleIsOpenSettingsPopup,
+    isOpenSettingsPopup,
   };
+
   return (
     <UserSettingsContext.Provider value={context}>
       {children}

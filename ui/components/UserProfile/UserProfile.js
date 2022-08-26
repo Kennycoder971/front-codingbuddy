@@ -4,11 +4,13 @@ import Image from "next/image";
 import Button from "../Button/Button";
 import { AiFillSetting } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
-import SettingPopup from "../SettingPopup/SettingPopup";
+import { useContext } from "react";
+import UserSettingsContext from "@/store/user-settings";
 
 let user = 1;
 const UserProfile = ({ follower, following }) => {
-  const [isPopupActive, setPopupActive] = useState(false);
+  // Open the popup to modify user settings
+  const { toggleSettingsPopup } = useContext(UserSettingsContext);
 
   return (
     <main className={styles.UserProfile}>
@@ -58,7 +60,7 @@ const UserProfile = ({ follower, following }) => {
         ) : (
           <div
             className={styles.settingsIcon}
-            onClick={(e) => setPopupActive(!isPopupActive)}
+            onClick={(e) => toggleSettingsPopup(true)}
           >
             <IconContext.Provider value={{ size: "1.5em" }}>
               <AiFillSetting />
@@ -66,13 +68,6 @@ const UserProfile = ({ follower, following }) => {
           </div>
         )}
       </div>
-
-      {isPopupActive && (
-        <SettingPopup
-          isPopupActive={isPopupActive}
-          setPopupActive={setPopupActive}
-        />
-      )}
     </main>
   );
 };

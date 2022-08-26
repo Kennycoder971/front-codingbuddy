@@ -1,10 +1,37 @@
 import { useState } from "react";
 import styles from "./UserSettings.module.scss";
 import Image from "next/image";
-import Link from "next/link";
+import { useContext } from "react";
+import UserSettingsContext from "@/store/user-settings";
 
 const UserSettings = ({ userImage }) => {
+  // Open the popup to modify user settings
+  const { toggleSettingsPopup } = useContext(UserSettingsContext);
+
   const [isDropdownActive, setIsDropdownActive] = useState(false);
+  const dropdownElNames = [
+    "Modifier mon profil",
+    "paramètres",
+    "Se déconnecter",
+  ];
+
+  const dropdownElems = dropdownElNames.map((el, index) => {
+    return (
+      <li
+        tabIndex={0}
+        onClick={(e) => {
+          setIsDropdownActive(false);
+          if (index === 0) {
+            toggleSettingsPopup(true);
+          }
+        }}
+        key={el}
+      >
+        {el}
+      </li>
+    );
+  });
+
   return (
     <div className={styles.UserSettings}>
       <figure
@@ -26,9 +53,7 @@ const UserSettings = ({ userImage }) => {
           isDropdownActive ? styles.active : ""
         }`}
       >
-        <li tabIndex={0}>Modifier mon profil</li>
-        <li tabIndex={0}>Paramètres</li>
-        <li tabIndex={0}>Se déconnecter</li>
+        {dropdownElems}
       </ul>
     </div>
   );
