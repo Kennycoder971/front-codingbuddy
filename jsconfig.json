@@ -8,17 +8,17 @@
             "@/styles/*": [
                 "styles/*"
             ],
+            "@/utils/*": [
+                "utils/*"
+            ],
             "@/store/*": [
                 "store/*"
-            ],
-            "@/helpers/*": [
-                "helpers/*"
             ],
             "@/queries/*": [
                 "queries/*"
             ],
-            "@/customHooks/*": [
-                "customHooks/*"
+            "@/hooks/*": [
+                "hooks/*"
             ]
         }
     }
