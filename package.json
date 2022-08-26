@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "generate-react-cli": "^7.2.0",
     "next": "12.2.4",
     "node-sass": "^7.0.1",

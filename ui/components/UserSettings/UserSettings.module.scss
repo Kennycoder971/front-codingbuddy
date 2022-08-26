@@ -1,6 +1,7 @@
 .UserSettings {
     position: relative;
     cursor: pointer;
+
     .imgContainer {
         display: flex;
         align-items: center;
@@ -12,7 +13,7 @@
     }
     
     .dropdown {
-        display: none;
+        display: none ;
         flex-direction: column;
         position: absolute;
         align-items: flex-start;
@@ -58,7 +59,6 @@
     
     figure {
         display: none;
-        
     }
     .dropdown {
         position: static;
@@ -67,7 +67,7 @@
         padding: var(--m-size);
         padding: 0;
         padding-left: var(--m-size);
-        display: flex;
+        display: flex !important;
 
         li {
             padding: var(--m-size);

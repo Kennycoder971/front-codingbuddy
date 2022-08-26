@@ -1,17 +1,20 @@
 .Navbar {
     position: relative;
     z-index: 10;
-    div {
+
+    .container {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        max-width: 1300px;
+        width: 90%;
+        margin: 0 auto;
 
         figure {
-                display: inline-block;
-                padding: var(--m-size);
+            padding: var(--m-size);
         }
 
-        ul {
+        .menu {
             list-style: none;
             display: flex;
             justify-content: center;
@@ -90,13 +93,13 @@
             transform: translateX(0);
         }
         
-        div {
+        .container {
             
             margin: 0;
             flex-direction: column;
             align-items: flex-start;
 
-            ul {
+            .menu {
                 flex-direction: column;
                 justify-content: start ;
                 align-items: flex-start;
@@ -105,8 +108,6 @@
                     padding: 0;
                 }
             }  
-
-            
         }
     }
 }
