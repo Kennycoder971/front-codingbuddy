@@ -6,11 +6,9 @@ import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
 import Link from "next/link";
 import AuthContext from "@/store/auth";
-import { useRouter } from "next/router";
 
 const SignInPage = () => {
   const { register } = useContext(AuthContext);
-  const router = useRouter();
 
   const [fields, setFields] = useState({
     username: "",
@@ -22,13 +20,16 @@ const SignInPage = () => {
   function setField(fieldName, value) {
     setFields((prevState) => ({ ...prevState, [fieldName]: value }));
   }
+
   async function onSubmit(fields) {
     try {
-      const data = await register(fields);
+      await register(fields);
+      location.assign("/");
     } catch (error) {
       console.log(error);
     }
   }
+
   return (
     <main className={styles.SignInPage}>
       <Container>

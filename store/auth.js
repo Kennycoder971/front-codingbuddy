@@ -36,7 +36,7 @@ export function AuthContextProvider({ children }) {
       return data;
     } catch (error) {
       setUser(null);
-      return error;
+      throw error;
     }
   };
 
@@ -45,15 +45,17 @@ export function AuthContextProvider({ children }) {
     const payload = { email, password };
     const url = `${API_URL}/auth/login`;
     try {
-      const { data } = await axiosReq(url, "post", payload);
+      const { data, error } = await axiosReq(url, "post", payload);
+
+      if (error) throw error;
 
       // Set the cookie jwt
-      setCookie("jwt", data.data.token, "/");
-      setUser(data.data.data);
+      setCookie("jwt", data?.data.token, "/");
+      setUser(data?.data);
       return data;
     } catch (error) {
       setUser(null);
-      return error;
+      throw error;
     }
   };
 
@@ -61,6 +63,7 @@ export function AuthContextProvider({ children }) {
   const logout = async () => {
     removeCookie("jwt", "/");
     setUser(null);
+    location.assign("/login");
   };
 
   // Check if user is logged in

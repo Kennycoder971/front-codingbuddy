@@ -3,10 +3,13 @@ import styles from "./UserSettings.module.scss";
 import Image from "next/image";
 import { useContext } from "react";
 import UserSettingsContext from "@/store/user-settings";
-
+import AuthContext from "@/store/auth";
 const UserSettings = ({ userImage }) => {
   // Open the popup to modify user settings
   const { toggleSettingsPopup } = useContext(UserSettingsContext);
+
+  // Authentication context
+  const { logout } = useContext(AuthContext);
 
   const [isDropdownActive, setIsDropdownActive] = useState(false);
   const dropdownElNames = [
@@ -23,6 +26,11 @@ const UserSettings = ({ userImage }) => {
           setIsDropdownActive(false);
           if (index === 0) {
             toggleSettingsPopup(true);
+          }
+
+          // Allow dropdown in navbar to log user out
+          if (index === dropdownElems.length - 1) {
+            logout();
           }
         }}
         key={el}
