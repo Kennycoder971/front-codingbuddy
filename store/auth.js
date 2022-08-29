@@ -1,14 +1,21 @@
 import { createContext, useState, useEffect } from "react";
 import { getCookie, setCookie, removeCookie } from "@/utils/cookieHelpers";
-import useAxios from "@/hooks/useAxios";
+import axiosReq from "@/utils/axiosReq";
 
-const AuthContext = createContext();
+const AuthContext = createContext({
+  user: {},
+  register: () => {},
+  login: () => {},
+  logout: () => {},
+});
 const API_URL = process.env.API_URL;
 
 export function AuthContextProvider({ children }) {
   const [user, setUser] = useState(null);
 
-  useEffect(() => checkUserLoggedIn(), []);
+  useEffect(() => {
+    checkUserLoggedIn();
+  }, []);
 
   // Register user
   const register = async ({ username, email, password }) => {
@@ -20,12 +27,12 @@ export function AuthContextProvider({ children }) {
     };
 
     try {
-      const { data } = await useAxios(url, "get", payload);
+      const { data, error } = await axiosReq(url, "post", payload);
 
+      if (error) throw error;
       // Set the cookie jwt
-      setCookie("jwt", data.token, "/");
-      setUser(data.data);
-
+      setCookie("jwt", data?.data.token, "/");
+      setUser(data?.data);
       return data;
     } catch (error) {
       setUser(null);
@@ -38,12 +45,11 @@ export function AuthContextProvider({ children }) {
     const payload = { email, password };
     const url = `${API_URL}/auth/login`;
     try {
-      const { data } = await useAxios(url, "post", payload);
+      const { data } = await axiosReq(url, "post", payload);
 
       // Set the cookie jwt
-      setCookie("jwt", data.token, "/");
-      setUser(data.data);
-
+      setCookie("jwt", data.data.token, "/");
+      setUser(data.data.data);
       return data;
     } catch (error) {
       setUser(null);
@@ -60,6 +66,7 @@ export function AuthContextProvider({ children }) {
   // Check if user is logged in
   const checkUserLoggedIn = async () => {
     const jwt = getCookie("jwt");
+
     const url = `${API_URL}/auth/me`;
     const payload = {
       headers: {
@@ -68,10 +75,10 @@ export function AuthContextProvider({ children }) {
     };
 
     if (jwt) {
-      const { data } = await useAxios(url, "get", payload);
+      const { data } = await axiosReq(url, "get", payload);
 
       try {
-        setUser(data.data);
+        setUser(data.data.data);
       } catch (error) {
         setUser(null);
       }

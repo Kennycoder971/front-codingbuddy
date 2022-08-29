@@ -3,6 +3,7 @@ import axios from "axios";
 export default async function axiosReq(url, method, payload) {
   const controller = new AbortController();
   let [data, error, loaded] = [null, "", false];
+
   const cancel = () => {
     controller.abort();
   };
@@ -13,14 +14,14 @@ export default async function axiosReq(url, method, payload) {
       signal: controller.signal,
       method,
       url,
+      headers: payload?.headers || "",
     });
 
-    data = response.data;
-  } catch (error) {
-    error = error.message;
+    data = response;
+  } catch (err) {
+    error = err.response.data;
   } finally {
     loaded = true;
   }
-
   return { cancel, data, error, loaded };
 }
