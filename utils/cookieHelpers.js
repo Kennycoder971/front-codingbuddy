@@ -6,7 +6,11 @@ export function getCookie(cookieName) {
 }
 
 export function setCookie(cookieName, data, path) {
-  cookies.set(cookieName, data, { path });
+  const current = new Date();
+  const nextYear = new Date();
+  nextYear.setFullYear(current.getFullYear() + 1);
+
+  cookies.set(cookieName, data, { path, expires: nextYear });
 }
 
 export function removeCookie(cookieName, path) {

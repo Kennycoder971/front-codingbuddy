@@ -7,7 +7,13 @@
             cursor: pointer;
             img {
                     border-radius: 5px;
-                }
+            }
+
+            svg {
+                width: 40px;
+                height: 40px;
+                border-radius: 5px;
+            }
             
             figcaption {
                 margin-left: var(--s-size);

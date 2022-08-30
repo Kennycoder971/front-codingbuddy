@@ -50,7 +50,7 @@ export function AuthContextProvider({ children }) {
       if (error) throw error;
 
       // Set the cookie jwt
-      setCookie("jwt", data?.data.token, "/");
+      setCookie("jwt", data?.token, "/");
       setUser(data?.data);
       return data;
     } catch (error) {
@@ -71,19 +71,16 @@ export function AuthContextProvider({ children }) {
     const jwt = getCookie("jwt");
 
     const url = `${API_URL}/auth/me`;
-    const payload = {
-      headers: {
-        Authorization: `Bearer ${jwt}`,
-      },
-    };
-
     if (jwt) {
-      const { data } = await axiosReq(url, "get", payload);
+      const { data, error } = await axiosReq(url, "get");
+
+      if (error) throw error;
 
       try {
-        setUser(data.data.data);
+        setUser(data.data);
       } catch (error) {
         setUser(null);
+        throw error;
       }
     }
   };

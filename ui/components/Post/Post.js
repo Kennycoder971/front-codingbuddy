@@ -4,22 +4,19 @@ import styles from "./Post.module.scss";
 import Image from "next/image";
 import { SiGooglemessages } from "react-icons/si";
 import { MdThumbUpAlt } from "react-icons/md";
-import { AiOutlineRetweet } from "react-icons/ai";
+import displayLocaleDate from "@/utils/displayLocaleDate";
 
-const Post = () => (
+const Post = ({ user, post }) => (
   <article className={styles.Post}>
     <div className={styles.top}>
-      <UserInfo userName={"Sandra"} />
+      <UserInfo userName={user?.username || "Anonyme"} />
       <div className={styles.dots}>
         <div></div>
         <div></div>
         <div></div>
       </div>
     </div>
-    <p className={styles.text}>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio suscipit
-      modi illum amet assumenda dignissimos repellendus iure dolore sit et!
-    </p>
+    <p className={styles.text}>{post?.text}</p>
 
     <div className={styles.imgContainer}>
       <Image
@@ -31,20 +28,16 @@ const Post = () => (
       <ul className={styles.icons}>
         <li>
           <SiGooglemessages />
-          <span>10</span>
+          <span>{post?.replies.length}</span>
         </li>
         <li>
           <MdThumbUpAlt />
-          <span>32</span>
-        </li>
-        <li>
-          <AiOutlineRetweet />
-          <span>4</span>
+          <span>{post?.likes.length}</span>
         </li>
       </ul>
 
       <div className={styles.date}>
-        <time>10 Mai 2022</time>
+        <time>{displayLocaleDate(post?.createdAt)}</time>
       </div>
     </div>
   </article>
