@@ -4,7 +4,9 @@ import Image from "next/image";
 import { useContext } from "react";
 import UserSettingsContext from "@/store/user-settings";
 import AuthContext from "@/store/auth";
-const UserSettings = ({ userImage }) => {
+import Avatar from "../../svg/avatar.svg";
+
+const UserSettings = ({ user }) => {
   // Open the popup to modify user settings
   const { toggleSettingsPopup } = useContext(UserSettingsContext);
 
@@ -47,13 +49,17 @@ const UserSettings = ({ userImage }) => {
         className={styles.imgContainer}
         onClick={(e) => setIsDropdownActive(!isDropdownActive)}
       >
-        <Image
-          width={40}
-          height={40}
-          layout="fixed"
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
-        />
-        <span>Sandra Wololo</span>
+        {user?.profilePicture ? (
+          <Image
+            width={40}
+            height={40}
+            layout="fixed"
+            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+          />
+        ) : (
+          <Avatar />
+        )}
+        <span>{user?.username}</span>
       </figure>
 
       <ul

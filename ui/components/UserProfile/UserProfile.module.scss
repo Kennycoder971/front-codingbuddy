@@ -19,9 +19,16 @@
         .photo {
                 transform: translateY(-8vh);
         
-                img {
+                img,svg {
                     border-radius: 5px;
                 }
+
+                svg {
+                    width: 140px;
+                    height: 140px;
+                }
+
+                
         }
         .userData {
             width: 100%;

@@ -7,11 +7,12 @@ import UserSettings from "../UserSettings/UserSettings";
 import { useContext } from "react";
 import UserSettingsContext from "@/store/user-settings";
 import SettingPopup from "@/ui/components/SettingPopup/SettingPopup";
+import AuthContext from "@/store/auth";
 
 const Navbar = () => {
   const [navOpen, setNavOpen] = useState(false);
   const { isOpenSettingsPopup } = useContext(UserSettingsContext);
-
+  const { user } = useContext(AuthContext);
   return (
     <>
       {isOpenSettingsPopup && <SettingPopup />}
@@ -25,7 +26,7 @@ const Navbar = () => {
             <NavLink text="Explorer" href="/explore" />
             <NavLink text="Sauvegardes" href="/saved" />
           </ul>
-          <UserSettings />
+          <UserSettings user={user} />
         </div>
       </div>
       <Hamberger navOpen={navOpen} setNavOpen={setNavOpen} />

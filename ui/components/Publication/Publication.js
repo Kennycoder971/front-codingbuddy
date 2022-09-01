@@ -7,7 +7,21 @@ import Button from "../Button/Button";
 import axiosReq from "@/utils/axiosReq";
 
 const Publication = ({ user }) => {
-  const [posts, setPosts] = useState(null);
+  const [posts, setPosts] = useState([]);
+  const url = `${process.env.API_URL}/posts`;
+
+  useEffect(() => {
+    (async () => {
+      try {
+        // Fetch posts for this user
+        const { data } = await axiosReq(url, "get");
+        setPosts(data.data);
+      } catch (error) {
+        console.error(error);
+      }
+    })();
+  }, [posts]);
+
   const [fields, setFields] = useState({
     text: "",
     profilePicture: "",
@@ -22,21 +36,9 @@ const Publication = ({ user }) => {
     });
   }
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const url = `${process.env.API_URL}/users/${user?._id}/posts`;
-        const { data } = await axiosReq(url, "get");
-        setPosts(data.data);
-      } catch (error) {
-        setPosts(null);
-      }
-    })();
-  }, [posts]);
-
   async function publishPost(fields) {
-    const url = `${process.env.API_URL}/posts`;
     try {
+      // Send a post
       const { data } = await axiosReq(url, "post", fields);
       setPosts((prevState) => [...prevState, data.data]);
       setFields((prevState) => ({ ...prevState, text: "" }));

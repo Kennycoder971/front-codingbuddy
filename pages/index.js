@@ -2,10 +2,10 @@ import Publication from "@/ui/components/Publication/Publication";
 import { useContext } from "react";
 import AuthContext from "@/store/auth";
 
-export default function Me(loaded) {
+export default function Me() {
   const { user } = useContext(AuthContext);
-  console.log(user);
-  return <main>{loaded ? <Publication user={user} /> : <p>loading</p>}</main>;
+
+  return <main>{<Publication user={user} />}</main>;
 }
 
 export async function getStaticProps(context) {

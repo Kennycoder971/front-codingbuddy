@@ -14,6 +14,19 @@ const nextConfig = {
 
     return config;
   },
+  async headers() {
+    return [
+      {
+        source: "/_next/:path*",
+        headers: [
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "http://localhost:3000",
+          },
+        ],
+      },
+    ];
+  },
   env: {
     API_URL: process.env.API_URL,
   },
