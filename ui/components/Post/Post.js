@@ -1,15 +1,16 @@
-import { useState, useEffect } from "react";
 import UserInfo from "../UserInfo/UserInfo";
 import styles from "./Post.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import { SiGooglemessages } from "react-icons/si";
-import { MdThumbUpAlt } from "react-icons/md";
 import displayLocaleDate from "@/utils/displayLocaleDate";
-import { addLikeToPost, getPostLikes, deletePostLikes } from "./helpers";
-import { IconContext } from "react-icons";
+import Like from "@/ui/components/Like/Like";
+import Reply from "@/ui/components/Reply/Reply";
 
 const Post = ({ user, post }) => {
+  if (!user || !post) {
+    return <li>Chargement ...</li>;
+  }
+
   return (
     <article className={styles.Post}>
       <Link href="/explore">
@@ -43,21 +44,8 @@ const Post = ({ user, post }) => {
 
       <div className={styles.bottom}>
         <ul className={styles.icons}>
-          <li>
-            <SiGooglemessages />
-            <span>{post?.replies.length}</span>
-          </li>
-          <li>
-            <IconContext.Provider
-              value={{
-                color: "" ? "var(--primary-color)" : "inherit",
-                className: "global-class-name",
-              }}
-            >
-              <MdThumbUpAlt />
-            </IconContext.Provider>
-            <span>{0}</span>
-          </li>
+          <Reply />
+          <Like post={post} user={user} />
         </ul>
 
         <div className={styles.date}>

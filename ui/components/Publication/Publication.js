@@ -10,12 +10,12 @@ const Publication = ({ user }) => {
   const [posts, setPosts] = useState([]);
   const url = `${process.env.API_URL}/posts`;
 
+  console.log(posts);
   useEffect(() => {
     (async () => {
       try {
         // Fetch posts for this user
         const { data } = await axiosReq(url, "get");
-
         setPosts(data.data);
       } catch (error) {
         console.error(error);
