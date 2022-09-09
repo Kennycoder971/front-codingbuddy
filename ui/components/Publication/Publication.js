@@ -15,12 +15,13 @@ const Publication = ({ user }) => {
       try {
         // Fetch posts for this user
         const { data } = await axiosReq(url, "get");
+
         setPosts(data.data);
       } catch (error) {
         console.error(error);
       }
     })();
-  }, [posts]);
+  }, []);
 
   const [fields, setFields] = useState({
     text: "",
@@ -40,7 +41,7 @@ const Publication = ({ user }) => {
     try {
       // Send a post
       const { data } = await axiosReq(url, "post", fields);
-      setPosts((prevState) => [...prevState, data.data]);
+      setPosts((prevState) => [data.data, ...prevState]);
       setFields((prevState) => ({ ...prevState, text: "" }));
     } catch (error) {
       console.log(error);

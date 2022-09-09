@@ -19,6 +19,7 @@ const useAxios = (url, method, payload) => {
           url,
         });
         setData(response.data);
+        console.log(response.data);
       } catch (error) {
         console.log(error);
         setError(error.message);

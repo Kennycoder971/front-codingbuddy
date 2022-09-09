@@ -43,13 +43,13 @@ const UserProfile = ({ user }) => {
             <li>
               <p>
                 {" "}
-                <strong>{user?.followers.length}</strong> follower
+                <strong>{user?.followers?.length}</strong> follower
               </p>
             </li>
             <li>
               <p>
                 {" "}
-                <strong>{user?.following.length}</strong> following
+                <strong>{user?.following?.length}</strong> following
               </p>
             </li>
           </ul>

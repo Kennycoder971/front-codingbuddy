@@ -7,7 +7,7 @@ import UserPlaceHolder from "../../svg/avatar.svg";
 const UserInfo = ({ user, pathName }) => (
   <div className={styles.UserInfo}>
     <figure>
-      <Link href={pathName}>
+      <Link href={"/"}>
         <div>
           {user?.profilePicture ? (
             <Image

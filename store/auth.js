@@ -31,8 +31,9 @@ export function AuthContextProvider({ children }) {
 
       if (error) throw error;
       // Set the cookie jwt
-      setCookie("jwt", data?.data.token, "/");
+      setCookie("jwt", data?.token, "/");
       setUser(data?.data);
+
       return data;
     } catch (error) {
       setUser(null);
@@ -77,8 +78,9 @@ export function AuthContextProvider({ children }) {
       if (error) throw error;
 
       try {
-        setUser(data.data);
+        setUser(data?.data);
       } catch (error) {
+        console.log(error);
         setUser(null);
         throw error;
       }

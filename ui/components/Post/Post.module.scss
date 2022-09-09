@@ -3,7 +3,7 @@
     padding: var(--m-size);
     margin-bottom: var(--m-size);
     border-radius: 10px;
-    
+
     .top{
         display: flex;
         justify-content: space-between;
@@ -31,8 +31,9 @@
     .imgContainer {
         position: relative;
         width: 100%;
-        height: 500px;
+        height: fit-content;
         margin-bottom: var(--s-size);
+        
         img {
             border-radius: 5px;
         }

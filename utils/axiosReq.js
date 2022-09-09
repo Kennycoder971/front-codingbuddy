@@ -8,6 +8,8 @@ export default async function axiosReq(url, method, payload) {
   const jwt = getCookie("jwt");
   const payloadJWT = {
     Authorization: `Bearer ${jwt}`,
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE,PATCH,OPTIONS",
   };
 
   const cancel = () => {
@@ -26,6 +28,7 @@ export default async function axiosReq(url, method, payload) {
     data = response.data;
   } catch (err) {
     error = err.response.data;
+    console.log(err);
   } finally {
     loaded = true;
   }
